@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vanilla JS</title>
+  </head>
+  <body>
+    <h1 id="hphk">Happy Hacking!</h1>
+    <h2 id="visitor"></h2>
+    <div>
+      <a href="#" id="who-button">Who said what?</a>
+      <span id="answerer"></span>
+    </div>
+    <div>
+      <span id="counter">0</span>
+      <button id="counter-button-plus">PLUS</button>
+      <button id="counter-button-minus">MINUS</button>
+      <button id="counter-button-reset">RESET</button>
+    </div>
+    <!-- script------------------------------------------------------------------------- -->
+    <script>
+      const hphk = document.querySelector("#hphk");
+      console.log(hphk);
+      const whoVisitor = document.querySelector("#visitor");
+      //   alert("귀찮은 알림 창");
+      const visitor = prompt("누구십니까?");
+      if (visitor === "kim") {
+        whoVisitor.innerHTML = visitor + "님, 어서오세요.";
+      } else {
+        whoVisitor.innerHTML = "빠염.";
+      }
+      const whoButton = document.querySelector("#who-button");
+      whoButton.addEventListener("click", () => {
+        document.querySelector("#answerer").innerHTML = visitor;
+      });
+
+      const counterValue = document.querySelector("#counter");
+      const counterButtonPlus = document.querySelector("#counter-button-plus");
+      const counterButtonMinus = document.querySelector("#counter-button-minus");
+      const counterButtonReset = document.querySelector("#counter-button-reset");
+    //   console.log(counterValue);    
+      counterButtonPlus.addEventListener("click", () => {
+        counterValue.innerHTML = Number(counterValue.innerHTML) + 1;
+      });
+      counterButtonMinus.addEventListener("click", () => {
+        counterValue.innerHTML = Number(counterValue.innerHTML) - 1;
+      });
+      counterButtonReset.addEventListener("click", () => {
+        counterValue.innerHTML = 0;
+      });
+    </script>
+  </body>
+</html>
