@@ -26,6 +26,7 @@ function pushToDom(parseData) {
   const dataSet = parseData.data;
 
   dataSet.forEach(el => {
+    // 받아온 data 반복문으로 꺼내기
     const imageURL = el.images.fixed_height.url;
     const alt = el.title;
 
@@ -34,9 +35,11 @@ function pushToDom(parseData) {
 }
 
 button.addEventListener("click", () => {
+  // 검색 버튼 클릭 때
   searchAndPush(inputArea.value);
 });
 
 inputArea.addEventListener("keypress", e => {
+  // enter 키보드 누를때
   if (e.which === 13) searchAndPush(inputArea.value);
 });
