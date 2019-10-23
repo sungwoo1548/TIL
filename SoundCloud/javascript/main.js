@@ -39,7 +39,7 @@ const SoundCloudAPI = {
       const imageImg = document.createElement("img");
       imageImg.classList.add("image_img");
       imageImg.src =
-        tracks.artwork_url || "http://lorempixel.com/100/100/abstract";
+        tracks.artwork_url || "https://lorempixel.com/100/100/abstract";
 
       //contents
       const content = document.createElement("div");
