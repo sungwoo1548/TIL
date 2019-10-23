@@ -13,7 +13,7 @@ function searchContents() {
   const randomNum = Math.floor(Math.random() * contents.length);
   const keyword = contents[randomNum];
 
-  const URL = `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}`;
+  const URL = `https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}`;
 
   const GiphyAJAXCall = new XMLHttpRequest();
   GiphyAJAXCall.open("GET", URL);
