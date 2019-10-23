@@ -6,7 +6,7 @@ const resultArea = document.querySelector("#result-area");
 
 function searchAndPush(keyword) {
   // api 이용 data 받아오기
-  const URL = `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}`;
+  const URL = `https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}`;
 
   const GiphyAJAXCall = new XMLHttpRequest();
   GiphyAJAXCall.open("GET", URL);
