@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Socket io</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <div>F12를 눌러 console 탭과 network 탭을 확인하세요.</div>
+  <script>
+    // var socket = io(); //1
+    var socket = io.connect("http://localhost:3000", { path: "/socket.io" });
+    socket.on("news", data => {
+        console.log(data);
+        socket.emit("reply", "Hello node.js 나는 클라야.");
+      })
+
+  </script>
+
+ 
+</body>
+
+</html>
