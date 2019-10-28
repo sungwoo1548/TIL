@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat room</title>
+</head>
+
+<body>
+  <div>F12를 눌러 console 탭과 network 탭을 확인하세요.</div>
+  <script>
+    var webSocket = new WebSocket("ws://localhost:3000");
+    webSocket.onopen = function () {
+      console.log("클라에서 소켓 서버 연결 됨.");
+    }
+    webSocket.onmessage = function(){
+      console.log(event.data);
+      webSocket.send("클라에서 서버로 메세지 보냄.");
+    }
+  </script>
+</body>
+
+</html>
