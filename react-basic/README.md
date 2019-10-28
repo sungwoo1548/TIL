@@ -73,7 +73,7 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 
 
 
-## 컴포넌트 여러 개 만들기
+## 스타일
 
 * Semantic ui cdn 이용.
 
@@ -91,7 +91,21 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 
 
 
-rfc 명령어.
+* faker 이용
+
+> yarn add faker
+>
+> import 해서 사용....
+>
+> faker는 빈공간에 그럴듯한 내용 채워줌.
+>
+> 
+
+
+
+rfc 명령어 : 컴포넌트로 자동 완성.
+
+rafc 화살표 함수.
 
 
 
