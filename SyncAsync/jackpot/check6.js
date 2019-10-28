@@ -13,8 +13,8 @@ async function checkNumber(회차) {
     console.log(`${회차}회차의 보너스 번호는 : `, realData.bnusNo);
     console.log(`${회차}회차의 1등 당첨 번호는 : `, realData.realNumbers);
 
-    // const myNumber = await pick6;
-    const myNumber = [1, 4, 10, 12, 28, 26];
+    const myNumber = await pick6;
+    // const myNumber = [1, 4, 10, 12, 28, 26];
     console.log("내가 고른 번호는 : ", myNumber);
 
     // 비교 로직
