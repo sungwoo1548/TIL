@@ -104,8 +104,9 @@ ReactDOM.render(<App />, document.querySelector("#root"));
 
 
 rfc 명령어 : 컴포넌트로 자동 완성.
+rafc 명령어 : 화살표 함수.
 
-rafc 화살표 함수.
+rcc 명령어 : class형식.
 
 
 
