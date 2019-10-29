@@ -22,12 +22,22 @@ export default function ProductTable(props) {
                         return (
                             <>
                                 <ProductCategoryRow category={category} />
-                                <ProductRow name={name} price={price} stocked={stocked} keyword={props.keyword} isChecked={props.isChecked} />
+                                <ProductRow
+                                    name={name}
+                                    price={price}
+                                    stocked={stocked}
+                                    keyword={props.keyword}
+                                    isChecked={props.isChecked} />
                             </>
                         )
                     }
                     return (
-                        <ProductRow name={name} price={price} stocked={stocked} keyword={props.keyword} isChecked={props.isChecked} />
+                        <ProductRow
+                            name={name}
+                            price={price}
+                            stocked={stocked}
+                            keyword={props.keyword}
+                            isChecked={props.isChecked} />
                     );
                 })}
             </tbody>
