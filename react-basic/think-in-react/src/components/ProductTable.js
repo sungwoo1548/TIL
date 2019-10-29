@@ -3,7 +3,8 @@ import ProductCategoryRow from './ProductCategoryRow';
 import ProductRow from './ProductRow';
 
 
-export default function ProductTable(props) {
+export default function ProductTable({ data, keyword, isChecked }) {
+    if (!data) return <h2>로딩중입니다....</h2>; // data 선언시 null 일때, 
     let prevCategory = "";
 
     return (
@@ -15,30 +16,23 @@ export default function ProductTable(props) {
                 </tr>
             </thead>
             <tbody>
-
-                {props.data.map(({ category, price, name, stocked }) => {
-                    if (category !== prevCategory) {
-                        prevCategory = category;
-                        return (
-                            <>
-                                <ProductCategoryRow category={category} />
-                                <ProductRow
-                                    name={name}
-                                    price={price}
-                                    stocked={stocked}
-                                    keyword={props.keyword}
-                                    isChecked={props.isChecked} />
-                            </>
-                        )
-                    }
+                {data.map(({ category, price, name, stocked }) => {
+                    const products = { name, price, stocked };
                     return (
-                        <ProductRow
-                            name={name}
-                            price={price}
-                            stocked={stocked}
-                            keyword={props.keyword}
-                            isChecked={props.isChecked} />
-                    );
+                        <>
+                            {category !== prevCategory
+                                ? (
+                                    prevCategory = category,
+                                    < ProductCategoryRow category={category} />
+                                )
+                                : null}
+                            <ProductRow
+                                {...products}
+                                keyword={keyword}
+                                isChecked={isChecked} />
+                        </>
+                    )
+
                 })}
             </tbody>
         </table>
