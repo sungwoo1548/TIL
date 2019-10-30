@@ -1,0 +1,29 @@
+.season-display {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* winter */
+
+.season-display.winter {
+    color: darkblue;
+    background-color: aliceblue;
+}
+
+.season-display.winter i {
+    color: deepskyblue;
+}
+
+/* summer */
+
+.season-display.summer {
+    color: darkmagenta;
+    background-color: pink;
+}
+
+.season-display.summer i {
+    color: deeppink;
+}
