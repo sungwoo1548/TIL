@@ -52,11 +52,19 @@ export default class App extends Component {
                 <div className="ui container">
                     <label htmlFor="page">현재 페이지 : {this.state.page} / {this.state.searchedResult.total_pages}</label>
                 </div>
-                <div className="ui container">
-                    <button className="ui button" onClick={this.goPrevPage}>prev</button>
-                    <button className="ui button" onClick={this.goNextPage}>next</button>
+                <div className="ui container" style={{ display: "flex", justifyContent: "center" }}>
+                    {
+                        this.state.page === 1
+                            ? null
+                            : <button className="ui button" onClick={this.goPrevPage}>prev</button>
+                    }
+                    <ImageList images={this.state.images} />
+                    {
+                        this.state.images.length === 0
+                            ? null
+                            : <button className="ui button" onClick={this.goNextPage}>next</button>
+                    }
                 </div>
-                <ImageList images={this.state.images} />
             </div>
         )
     }

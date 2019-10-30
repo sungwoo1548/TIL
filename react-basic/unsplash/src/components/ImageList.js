@@ -7,5 +7,5 @@ export default function ImageList(props) {
         )
     });
 
-    return <>{images}</>
+    return <div style={{ display: "flex", flexDirection: "column" }}>{images}</div>
 }
