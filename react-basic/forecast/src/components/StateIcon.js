@@ -1,8 +1,8 @@
 import React from 'react'
 
-const StateIcon = () => {
+const StateIcon = ({icon}) => {
     return (
-        <img src="http://placehold.it/100x100" alt="wheater" />
+        <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="wheater" />
     )
 }
 

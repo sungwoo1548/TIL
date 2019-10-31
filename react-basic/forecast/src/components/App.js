@@ -10,8 +10,9 @@ import Spinner from './Spinner';
 const App = () => {
     const APPID = "06e171cdf39742a2f89a40c9b002ed9d";
 
-    const [current, setcurrent] = useState(null);
-    const [forcast, setforcast] = useState(null);
+    const [current, setCurrent] = useState(null);
+    const [forecast, setForecast] = useState(null);
+    const [unit, setUnit] = useState("C");
 
     const getLocation = () => {
         return new Promise((resolve, reject) => {
@@ -21,14 +22,19 @@ const App = () => {
 
     const getTemp = async (coords) => {
         const { latitude: lat, longitude: lon } = coords;
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${APPID}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${APPID}&units=metric&lang=kr`;
         const res = await axios.get(url);
-        console.log(res);
+        // console.log(res);
         const { data } = res;
-        setcurrent(data);
+        setCurrent(data);
     }
     const getHoulyTemp = async (coords) => {
-
+        const { latitude: lat, longitude: lon } = coords;
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=${APPID}&units=metric&lang=kr`;
+        const res = await axios.get(url);
+        const { data } = res;
+        console.log(data);
+        setForecast(data);
     }
 
     const getAll = async () => {
@@ -50,8 +56,13 @@ const App = () => {
                 <h1>일기 예보</h1>
             </header>
             <main className="container">
-                {!current ? <Spinner /> : <Current current={current} />}
-                <Forecast />
+                {!current || !forecast
+                    ? <Spinner />
+                    : <>
+                        <Current current={current} unit={unit} setUnit={setUnit} />
+                        <Forecast forecast={forecast} unit={unit} />
+                    </>}
+
             </main>
         </>
     )
