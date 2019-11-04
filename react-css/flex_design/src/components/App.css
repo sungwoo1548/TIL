@@ -1,0 +1,27 @@
+.wrapOne {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 30vh;
+}
+
+.item01 {
+  display: inherit;
+  flex: 100%;
+  background-color: lightcoral;
+}
+
+.item02 {
+  display: inherit;
+  flex: 1;
+  align-items: center;
+  background-color: lightgreen;
+}
+
+.item03 {
+  display: inherit;
+  flex: 3;
+  justify-content: center;
+  background-color: aqua;
+}
