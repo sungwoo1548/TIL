@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "@hapi/joi": "^16.1.7",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
