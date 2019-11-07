@@ -77,4 +77,17 @@ async function read() {
     .sort("-name")
     .select("name tags price");
 }
-read();
+// read();
+
+create();
+
+async function update(){
+    const course = await Course.findById({_id:1});
+    course.name = "";
+    await course.save();
+}
+// update();
+
+async function update2(){
+    const updated = await Course.updateMany({isPublished:true},{price:15});
+}
